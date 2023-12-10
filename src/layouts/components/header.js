@@ -16,7 +16,7 @@ const Header = () => {
                     <li><Link to="/Show">Show</Link></li>
                     <li><Link to="/Music">Music</Link></li>
                 </ul>
-                <div className=' w-max'>
+                <div className='w-2/6'>
                     <input className='w-full p-3 rounded-2xl bg-slate-800' type="text" placeholder='Tìm Phim' />
                 </div>
                 <div className="">
