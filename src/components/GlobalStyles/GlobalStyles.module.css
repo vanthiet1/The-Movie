@@ -1,0 +1,26 @@
+:root {
+    --primary: #e7032c;
+}
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Krub:wght@600&family=Open+Sans:wght@300&family=Rethink+Sans&family=Yanone+Kaffeesatz:wght@200&display=swap');
+html {
+    font-size: 70%;
+    scroll-behavior: smooth;
+    scroll-margin-top: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Netflix Sans",sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+}
