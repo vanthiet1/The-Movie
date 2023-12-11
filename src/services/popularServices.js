@@ -1,36 +1,22 @@
-// import { useEffect, useState } from "react";
-// import { get } from '../utils/httpRequest';
-// import Section from "../layouts/components/section"; 
-// const API_KEY = 'b9213c2cb1c7e5cd36af34a45ccc92fe';
+import axios from "axios";
+const API_KEY = 'b9213c2cb1c7e5cd36af34a45ccc92fe';
+const BASE_URL = 'https://api.themoviedb.org/3';
 
-// const PopularServices = () => {
-//     const [popularMovies, setPopularMovies] = useState([]);
+        const fetchPopularMovie = async () => {
+            try {
+                const response = await axios.get(`${BASE_URL}/movie/popular`, {
+                    params: {
+                        api_key: API_KEY,
+                        language: 'en-US',
+                        page:1,
+                    },
+                });
+                return response.data.results;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+      
+export {fetchPopularMovie}
 
-//     useEffect(() => {
-//         const fetchData = async (type = 'less', pageNum) => {
-//             try {
-//                 const response = await get('movie/popular', {
-//                     params: {
-//                         api_key: API_KEY,
-//                         type,
-//                         page: pageNum
-//                     },
-//                 });
 
-//                 setPopularMovies(response.data);
-//                 console.log();
-//             } catch (error) {
-//                 console.log(error);
-//             }
-//         }
-//         fetchData()
-//     }, []);
-
-//     return (
-//         <>
-          
-//         </>
-//     );
-// };
-
-// export default PopularServices;
