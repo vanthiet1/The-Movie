@@ -2,7 +2,7 @@ import paths from '../config/paths';
 
 import Home from '../pages/Home';
 import Favorite from '../pages/Favorite';
-import Movie from '../pages/Movie';
+import Movies from '../pages/Movies';
 
 const publicRoutes = [
     {
@@ -16,9 +16,9 @@ const publicRoutes = [
         title: 'Favorite',
     },   
     {
-        path: paths.movie,
-        component: Movie,
-        title: 'Movie',
+        path: paths.movies,
+        component: Movies,
+        title: 'Movies',
     }
 ]
 export default publicRoutes;

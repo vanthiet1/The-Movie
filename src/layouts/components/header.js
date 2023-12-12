@@ -16,7 +16,7 @@ const Header = () => {
                 </div>
                 <ul className='text-white font-medium flex w-2/5  justify-around'>
                     <li><Link to="/">{t('Trang Chủ')}</Link></li>
-                    <li><Link to="/movie">{t('Bộ Phim')}</Link></li>
+                    <li><Link to="/movies">{t('Bộ Phim')}</Link></li>
                     <li><Link to="/favorite">{t('Yêu Thích')}</Link></li>
                 </ul>
                 <div className='w-2/6'>

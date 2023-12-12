@@ -8,7 +8,9 @@ const Section = () => {
          <div className='absolute left-1/4 top-2/4'>
             <h1 className='text-6xl font-bold pb-5'>Hướng dẫn phát trực tuyến phim, <br /> truyền hình và thể thao của bạn</h1>
             <span className='pb-5 inline-block'>Tìm nơi phát trực tuyến chương trình giải trí mới, phổ biến và sắp ra mắt.</span>
-            <ButtonStyle buttonContent={'Khám Phá & Phim Hay'} to={'/movie'}/>
+              <div className="w-2/5">
+              <ButtonStyle buttonContent={'Khám Phá & Phim Hay'} to={'/movie'}/>
+              </div>
          </div>
          </div>
         </>
