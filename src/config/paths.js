@@ -1,6 +1,6 @@
 const paths = {
-home: '/',
-favorite: '/Favorite',
-movies: '/Movies'
+Home: '/',
+Favorite: '/Favorite',
+Movies: '/Movies'
 }
 export default paths;

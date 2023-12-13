@@ -6,17 +6,17 @@ import Movies from '../pages/Movies';
 
 const publicRoutes = [
     {
-        path: paths.home,
+        path: paths.Home,
         component: Home,
         title: 'Home',
     },                                             
     {
-        path: paths.favorite,
+        path: paths.Favorite,
         component: Favorite,
         title: 'Favorite',
     },   
     {
-        path: paths.movies,
+        path: paths.Movies,
         component: Movies,
         title: 'Movies',
     }
