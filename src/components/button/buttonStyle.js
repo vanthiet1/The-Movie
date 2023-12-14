@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const ButtonStyle = ({buttonContent, to}) => {
+const ButtonStyle = ({buttonContent, to,target}) => {
     return (
         <div>
        <Link to={to}>

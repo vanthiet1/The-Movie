@@ -1,6 +1,7 @@
 const paths = {
 Home: '/',
 Favorite: '/Favorite',
-Movies: '/Movies'
+Movies: '/Movies',
+Reviewmovies: '/Reviewmovies/:id'
 }
 export default paths;

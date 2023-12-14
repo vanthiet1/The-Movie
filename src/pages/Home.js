@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderPage from '../layouts/components/header';
-import Section from '../layouts/components/section';
-import Article from '../layouts/components/article'
+import Section from '../layouts/components/home/section';
+import Article from '../layouts/components/home/article'
 import Footer from '../layouts/components/footer';
 import { useLanguage } from '../hooks/languageContext';
 import { useTranslation } from 'react-i18next';

@@ -18,5 +18,8 @@
         0%{ left: -100%}
         100%{ left: 150%}
     }
-
+  .bg-filter{
+    width: 50%;
+    background-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(14, 14, 14, 0.05) 16%, rgba(0, 0, 0, 0.2) 30%, rgba(17, 19, 25, 0.39) 43%, rgba(17, 19, 25, 0.61) 55%, rgba(17, 19, 25, 0.8) 68%, rgba(17, 19, 25, 0.95) 82%, rgb(14, 15, 20) 98%);
+  }
 }/*# sourceMappingURL=index.css.map */

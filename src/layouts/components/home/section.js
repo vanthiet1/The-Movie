@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonStyle } from '../../components/button/buttonStyle';
+import { ButtonStyle } from '../../../components/button/buttonStyle';
 const Section = () => {
     return (
         <>

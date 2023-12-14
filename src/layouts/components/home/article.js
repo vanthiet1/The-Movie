@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { fetchPopularMovie } from '../../services/popularServices';
-import IconleftArow from '../icon/IconleftArow';
-import IconrightArow from '../icon/IconrightArow';
-import { ButtonStyle } from '../../components/button/buttonStyle';
-import Pagination from '../../hooks/Pagination';
-import Skeleton from '../../components/Skeleton/Skeleton';
+import { fetchPopularMovie} from '../../../services/popularServices';
+import IconleftArow from '../../icon/IconleftArow';
+import IconrightArow from '../../icon/IconrightArow';
+import { ButtonStyle } from '../../../components/button/buttonStyle';
+import Pagination from '../../../hooks/Pagination';
+import Skeleton from '../../../components/Skeleton/Skeleton';
+import { Navigate } from 'react-router-dom';
 
-const Article = () => {
+
+const Article = ({navigate}) => {
+   
     const [data, setData] = useState([]);
+    // const [dataPage,setDatapage] = useState([]);
     const [currentIndex, setCurrenIndex] = useState(0);
     const [currentPage, setCurrentPage] = useState(1); // page 1
     const [showContent, setShowContent] = useState(false);
-
     const itemWidth = 200;
-
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const movies = await fetchPopularMovie();
+                // const  movies2 = await fetchPopularMoviePages();
                 setData(movies);
+                // setDatapage(movies2)
             } catch (error) {
                 console.log(error);
             } finally {
@@ -28,6 +32,8 @@ const Article = () => {
         };
         fetchData();
     }, []);
+
+
 
     const handleLeftArrow = () => {
         setCurrenIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : data.length - 1));
@@ -127,14 +133,15 @@ const Article = () => {
                                                 <span>{itemMovies.release_date}</span>
                                             </div>
                                             <div className='w-full p-4'>
-                                                <ButtonStyle buttonContent={'Xem Phim'} />
+                                            <ButtonStyle  to={`/Reviewmovies/${itemMovies.id}`} buttonContent={'Xem Phim'} />
                                             </div>
                                         </>
                                     )}
                                 </div>
                             ))}
-
                     </div>
+                
+                
 
                     <div className='flex justify-center '>
                         <Pagination
