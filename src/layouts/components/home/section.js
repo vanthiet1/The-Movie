@@ -9,7 +9,7 @@ const Section = () => {
             <h1 className='text-6xl font-bold pb-5'>Hướng dẫn phát trực tuyến phim, <br /> truyền hình và thể thao của bạn</h1>
             <span className='pb-5 inline-block'>Tìm nơi phát trực tuyến chương trình giải trí mới, phổ biến và sắp ra mắt.</span>
               <div className="w-2/5">
-              <ButtonStyle buttonContent={'Khám Phá & Phim Hay'} to={'/movie'}/>
+              <ButtonStyle buttonContent={'Khám Phá & Phim Hay'} to={'/movies'}/>
               </div>
          </div>
          </div>

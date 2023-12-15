@@ -2,9 +2,9 @@ import axios from "axios";
 
 const API_KEY = 'b9213c2cb1c7e5cd36af34a45ccc92fe';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const pages = [1,2,3];
+const pages = [3];
 
-const fetchAllmovies = async () => {
+const nominationsMovies = async () => {
     try {
         const allMovies = [];
 
@@ -28,5 +28,5 @@ const fetchAllmovies = async () => {
 }
 
 export {
-    fetchAllmovies
+    nominationsMovies
 };
