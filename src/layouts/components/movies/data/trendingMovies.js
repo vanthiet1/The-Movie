@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ButtonStyle } from '../../../../components/button/buttonStyle';
-import { fetchAllmovies } from '../../../../services/allService';
-const AllMovies = () => {
- const [allData, setAllData] = useState([]);
+import {fetchTrandingMovies} from '../../../../services/trendingService';
+const TrendingMovie = () => {
+ const [allDataTrendingMovies, setAllDataTrendingMovies] = useState([]);
  useEffect(() => {
     const fetchAllData = async () => {
         try {
-            const allmovies = await fetchAllmovies()
-            setAllData(allmovies);
+            const dataTrendingMovies= await fetchTrandingMovies()
+            setAllDataTrendingMovies(dataTrendingMovies);
         } catch (error) {
             console.log(error);
         }
@@ -18,9 +18,9 @@ const AllMovies = () => {
         <>
          <div className="w-full h-auto p-5">
                 <div className='w-full p-10'>
-                            <h1 className='text-5xl'>Tất cả phim</h1>
+                            <h1 className='text-5xl'>Phim xu hướng</h1>
                             <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 '>
-                                {allData.map((itemAllMovies) => (
+                                {allDataTrendingMovies.map((itemAllMovies) => (
                                     <div key={itemAllMovies.id} className='w-full h-max border-2 border-gray-500 rounded-xl'>
                                         <img
                                             className=' object-cover rounded-t-lg'
@@ -54,4 +54,4 @@ const AllMovies = () => {
     );
 };
 
-export {AllMovies};
+export {TrendingMovie};

@@ -83,7 +83,7 @@ const Article = () => {
                 <div className='p-10 w-full h-auto'>
                     <h1 className='text-5xl'>Phim đề cử</h1>
                 </div>
-                <div className=' relative'>
+                <div className='relative'>
                     <div
                         onClick={handleLeftArrow}
                         className='absolute z-10 left-5 top-1/2 bg-slate-500 hover:bg-slate-700 p-5 rounded-full opacity-70'
@@ -101,7 +101,7 @@ const Article = () => {
                             dataNominations.map((itemMovie) => (
                                 <div
                                     key={itemMovie.id}
-                                    className='w-full transition-transform ease-in-out duration-500 bg-red-950'
+                                    className='w-full transition-transform ease-in-out duration-500'
                                     style={{ transform: `translateX(${-currentIndex * itemWidth}px)` }}
                                 >
                                   <Link to={`/Reviewmovies/${itemMovie.id}`}>
