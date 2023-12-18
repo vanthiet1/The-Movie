@@ -38,7 +38,7 @@ const Article = () => {
     }, [])
     return (
         <>
-            <div id='content-top' className='w-full h-auto mt-32'>
+            <div id='content-top' className='w-full h-auto mt-[100px]'>
                 {movieDetails && (
                     <div className='flex justify-between'>
                         <div className='flex gap-5'>
