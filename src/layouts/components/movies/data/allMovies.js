@@ -16,8 +16,8 @@ const AllMovies = () => {
 }, [])
     return (
         <>
-         <div className="w-full h-auto p-5">
-                <div className='w-full p-10'>
+         <div className="w-full h-auto pl-5">
+                <div className='w-full pl-5'>
                             <h1 className='text-5xl'>Tất cả phim</h1>
                             <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 '>
                                 {allData.map((itemAllMovies) => (
