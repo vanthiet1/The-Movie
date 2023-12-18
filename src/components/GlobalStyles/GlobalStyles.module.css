@@ -25,7 +25,4 @@ body {
     text-rendering: optimizeSpeed;
 }
 
-::-webkit-scrollbar {
-    height: 5px;
-}
 

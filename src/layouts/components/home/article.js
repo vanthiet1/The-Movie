@@ -96,7 +96,7 @@ const Article = () => {
                     >
                         <IconrightArow />
                     </div>
-                    <div className='flex items-center p-10 gap-8 w-full overflow-auto'>
+                    <div className='flex items-center p-10 gap-8 w-full overflow-hidden'>
                         {
                             dataNominations.map((itemMovie) => (
                                 <div
