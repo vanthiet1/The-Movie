@@ -14,7 +14,6 @@ const Header = () => {
     const handleSearchChange = (e)=>{
          setSearchQuery(e.target.value);
     }
-    console.log(searchQuery);
     useEffect(()=>{
 if(query){
     const fetchSearchResults = async ()=>{

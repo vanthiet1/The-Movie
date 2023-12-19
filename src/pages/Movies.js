@@ -1,8 +1,9 @@
-import React from 'react';
 import HeaderPage from '../layouts/components/header';
 import Footer from "../layouts/components/footer";
 import Article from '../layouts/components/movies/article';
 const Movie = () => {
+     document.title="Movies";
+
     return (
         <div>
             <HeaderPage />

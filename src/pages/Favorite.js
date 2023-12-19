@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderPage from '../layouts/components/header';
 
 const Favorite = () => {
+    document.title="Favorite";
     return (
         <div>
         <HeaderPage></HeaderPage>

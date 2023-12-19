@@ -86,7 +86,7 @@ const Article = () => {
                 <div className='relative'>
                     <div
                         onClick={handleLeftArrow}
-                        className='absolute z-10 left-5 top-1/2 bg-slate-500 hover:bg-slate-700 p-5 rounded-full opacity-70'
+                        className='absolute z-10 left-5 top-1/2 bg-slate-500 hover:bg-slate-700 p-5 rounded-full opacity-70 '
                     >
                         <IconleftArow />
                     </div>
