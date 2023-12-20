@@ -34,7 +34,7 @@ const Footer = () => {
                         ))}
                     </div>
                 </div>
-                <div className="w-full text-center text-2xl max-md:p-[10px] max-md:mb-[100px]">
+                <div className="w-full text-center text-2xl max-md:p-[10px] max-md:pb-[100px]">
                     <span className='text-center w-full  text-stone-400'>Copyright © 2023 The Movie VanThiet</span>
                 </div>
             </div>

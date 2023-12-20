@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../../../services/reviewMovies';
 import { fetchCast } from '../../../services/castsService';
 import { fetchSimilarMovies } from '../../../services/similarService';
+import Footer from '../footer';
 import Logo from '../../../assets/logo-reactJS.png';
 const Article = () => {
     
@@ -61,12 +62,12 @@ const Article = () => {
                 {movieDetails ? (
                     <>
                         {movieDetails && (
-                            <div className='flex justify-between '>
+                            <div className='flex justify-between max-md:grid max-md:grid-cols-1 max-md:gap-[10px]'>
                                 <div className='flex gap-5'>
                                     {movieDetails.poster_path ? (
                                         <>
-                                            <div className='p-2 max-xl:w-[330px]'>
-                                                <img className='w-full h-[350px] rounded-xl' src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt="" />
+                                            <div className='p-2 max-xl:w-[330px] max-md:w-[350px]'>
+                                                <img className='w-full h-[350px] rounded-xl max-md:object-cover' src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt="" />
                                             </div>
                                         </>
                                     ) : (
@@ -74,12 +75,12 @@ const Article = () => {
                                     )}
                                     <div>
                                         <div className='name'>
-                                            <span className='block text-[30px]'>{movieDetails.title}</span>
-                                            <p className='max-w-[350px] h-[150px] overflow-auto text-[16px] py-3'>{movieDetails.overview}</p>
-                                            <span className='block'>Lượt bình chọn: {movieDetails.vote_average}</span>
-                                            <span className='block'>Ngôn ngữ: {movieDetails.original_language}</span>
-                                            <span className='block'>Ngày phát hành: {movieDetails.release_date}</span>
-                                            <span className='block'>Lượt xem: {movieDetails.popularity}</span>
+                                            <span className='block text-[30px] max-md:text-[20px]'>{movieDetails.title}</span>
+                                            <p className='max-w-[520px] h-[150px] overflow-auto text-[16px] py-3 max-md:text-[14px] max-md:h-[140px]'>{movieDetails.overview}</p>
+                                            <span className='block max-md:text-[14px] '>Lượt bình chọn: {movieDetails.vote_average}</span>
+                                            <span className='block max-md:text-[14px] '>Ngôn ngữ: {movieDetails.original_language}</span>
+                                            <span className='block max-md:text-[14px] '>Ngày phát hành: {movieDetails.release_date}</span>
+                                            <span className='block max-md:text-[14px] '>Lượt xem: {movieDetails.popularity}</span>
                                         </div>
                                         <div className='pt-2 w-full'>
                                             <ButtonStyle to={`https://www.youtube.com/embed/${movieDetails.trailerURL}`} buttonContent={'Xem Trailer'} />
@@ -88,9 +89,9 @@ const Article = () => {
                                 </div>
                                 {movieDetails.backdrop_path ? (
                                     <>
-                                        <div className="relative">
-                                            <img className='w-2xl' src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`} alt="Backdrop" />
-                                            <div className="absolute w-[50px] h-[290px] top-0 left-0 bg-filter max-xl:w-[45px] max-xl:h-[250px]"></div>
+                                        <div className="relative max-md:w-[100%]">
+                                            <img className='w-2xl max-md:w-[100%]' src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`} alt="Backdrop" />
+                                            <div className="absolute w-[50px] h-[290px] top-0 left-0 bg-filter max-xl:w-[45px] max-xl:h-[250px] max-md:hidden"></div>
                                         </div>
                                     </>
                                 ) : (
@@ -105,7 +106,7 @@ const Article = () => {
                 }
                 <div className="w-full h-auto pl-5">
                     <div className='w-full h-auto'>
-                        <h1 className='text-[30px]'>Dàn diễn viên</h1>
+                        <h1 className='text-[30px] max-md:text-3xl max-md:py-5'>Dàn diễn viên</h1>
                     </div>
                     <div className='w-full h-auto flex justify-between gap-10 overflow-auto'>
                         {castsMovies.map((cast)=>(
@@ -132,9 +133,9 @@ const Article = () => {
 
 
                 </div>
-                <div className='w-full pl-5 mt-[50px]'>
-                    <h1 className='text-5xl'>Phim tương tự</h1>
-                    <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 max-xl:grid max-xl:grid-cols-2'>
+                <div className='w-full pl-5 mt-[50px] max-md:p-5'>
+                    <h1 className='text-5xl max-md:text-3xl'>Phim tương tự</h1>
+                    <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 max-xl:grid max-xl:grid-cols-2 max-md:grid max-md:grid-cols-1'>
                         {relatedMovies.length > 0 ? (
                             <>
                                 {relatedMovies.map((itemAllMovies) => (
@@ -174,6 +175,7 @@ const Article = () => {
                         )}
                     </div>
                 </div>
+                <Footer></Footer>
             </div>
         </>
     );

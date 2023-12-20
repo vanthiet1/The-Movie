@@ -36,7 +36,7 @@ const Header = () => {
 
     return (
         <>
-            <div className='w-full bg-black p-10 flex items-center justify-between fixed top-0 left-0 z-10 opacity-90  max-xl:gap-5 max-md:p-[20px]'>
+            <div className='w-full bg-black p-10 flex items-center justify-between fixed top-[-3px] left-0 z-10 opacity-90  max-xl:gap-5 max-md:p-[20px] max-md:top-[-5px]'>
                 <div className="w-36 object-cover">
                     <a href="/" className=''>
                         <img src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" alt="" />
