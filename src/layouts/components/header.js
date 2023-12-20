@@ -42,7 +42,7 @@ const Header = () => {
                         <img src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" alt="" />
                     </a>
                 </div>
-                <ul className='text-white font-medium flex w-2/5 justify-around max-w-screen-md max-md:absolute max-md:bottom-[-650px] max-md:left-0 max-md:bg-black max-md:z-10 max-md:w-full max-md:h-[100px] max-md:flex max-md:items-center  '>
+                <ul className='text-white font-medium flex w-2/5 justify-around max-w-screen-md max-md:absolute max-md:bottom-[-700px] max-md:left-0 max-md:bg-black max-md:z-10 max-md:w-full max-md:h-[100px] max-md:flex max-md:items-center  '>
                     <li><Link to="/">{t('Trang Chủ')}</Link></li>
                     <li><Link to="/movies">{t('Bộ Phim')}</Link></li>
                     <li><Link to="/favorite">{t('Yêu Thích')}</Link></li>
