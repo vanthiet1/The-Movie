@@ -14,7 +14,7 @@ const Language = () => {
             <select
                 value={language}
                 onChange={handleChangeLanguage}
-                className='p-3 rounded-lg bg-transparent border border-white'
+                className='p-3 rounded-lg bg-transparent border border-white max-md:p-1'
             >
                 <option value="vi">{t('Tiếng Việt')}</option>
                 <option value="en">{t('English')}</option>

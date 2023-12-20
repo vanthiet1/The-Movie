@@ -16,10 +16,10 @@ const UpComingMovies = () => {
 }, [])
     return (
         <>
-         <div className="w-full h-auto pl-5">
-                <div className='w-full pl-5'>
-                            <h1 className='text-5xl'>Sắp tới</h1>
-                            <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 '>
+         <div className="w-full h-auto pl-5 max-md:p-0">
+                <div className='w-full pl-5 max-md:p-5'>
+                            <h1 className='text-5xl max-md:text-3xl'>Sắp tới</h1>
+                            <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 max-xl:grid max-xl:grid-cols-2 max-md:grid max-md:grid-cols-1'>
                                 {allDataComing.map((itemAllMovies) => (
                                     <div key={itemAllMovies.id} className='w-full h-max border-2 border-gray-500 rounded-xl'>
                                         <img

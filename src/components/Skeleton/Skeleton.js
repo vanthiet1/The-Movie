@@ -15,7 +15,7 @@ const Skeleton = () => {
           </div>
       
         <div class=" p-4 w-full">
-          <div data-placeholder class=" rounded-xl mb-2 h-20 w-full overflow-hidden relative bg-gray-400">
+          <div data-placeholder class=" rounded-xl mb-1 mt-5 h-20 w-full overflow-hidden relative bg-gray-400">
           </div>
         </div>
       </div>

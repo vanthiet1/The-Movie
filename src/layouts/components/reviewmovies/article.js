@@ -65,7 +65,7 @@ const Article = () => {
                                 <div className='flex gap-5'>
                                     {movieDetails.poster_path ? (
                                         <>
-                                            <div className='p-2'>
+                                            <div className='p-2 max-xl:w-[330px]'>
                                                 <img className='w-full h-[350px] rounded-xl' src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt="" />
                                             </div>
                                         </>
@@ -75,7 +75,7 @@ const Article = () => {
                                     <div>
                                         <div className='name'>
                                             <span className='block text-[30px]'>{movieDetails.title}</span>
-                                            <p className='max-w-[350px] text-[16px] py-3'>{movieDetails.overview}</p>
+                                            <p className='max-w-[350px] h-[150px] overflow-auto text-[16px] py-3'>{movieDetails.overview}</p>
                                             <span className='block'>Lượt bình chọn: {movieDetails.vote_average}</span>
                                             <span className='block'>Ngôn ngữ: {movieDetails.original_language}</span>
                                             <span className='block'>Ngày phát hành: {movieDetails.release_date}</span>
@@ -89,8 +89,8 @@ const Article = () => {
                                 {movieDetails.backdrop_path ? (
                                     <>
                                         <div className="relative">
-                                            <img className='w-[700px]' src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`} alt="Backdrop" />
-                                            <div className="absolute w-[50px] h-[400px] top-0 left-0 bg-filter"></div>
+                                            <img className='w-2xl' src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`} alt="Backdrop" />
+                                            <div className="absolute w-[50px] h-[290px] top-0 left-0 bg-filter max-xl:w-[45px] max-xl:h-[250px]"></div>
                                         </div>
                                     </>
                                 ) : (
@@ -134,7 +134,7 @@ const Article = () => {
                 </div>
                 <div className='w-full pl-5 mt-[50px]'>
                     <h1 className='text-5xl'>Phim tương tự</h1>
-                    <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 '>
+                    <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 max-xl:grid max-xl:grid-cols-2'>
                         {relatedMovies.length > 0 ? (
                             <>
                                 {relatedMovies.map((itemAllMovies) => (

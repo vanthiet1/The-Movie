@@ -80,8 +80,8 @@ const Article = () => {
     return (
         <>
             <div className='w-full pt-5'>
-                <div className='p-10 w-full h-auto'>
-                    <h1 className='text-5xl'>Phim đề cử</h1>
+                <div className='p-10 w-full h-auto max-md:p-5'>
+                    <h1 className='text-5xl max-md:text-4xl'>Phim đề cử</h1>
                 </div>
                 <div className='relative'>
                     <div
@@ -121,9 +121,9 @@ const Article = () => {
                     </div>
                 </div>
 
-                <div className='w-full p-10'>
-                    <h1 className='text-5xl'>Phim chính</h1>
-                    <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 '>
+                <div className='w-full p-10 max-md:p-5'>
+                    <h1 className='text-5xl max-md:text-3xl'>Phim chính</h1>
+                    <div className='w-full h-auto grid grid-cols-4 pt-10 gap-5 max-xl:grid max-xl:grid-cols-2  max-md:grid max-md:grid-cols-1 '>
                         {showContent &&
                             chunkArray(data, numberProduct)[currentPage - 1].map((itemMovies) => (
                                 <div key={itemMovies.id} className='w-full h-max border-2 border-gray-500 rounded-xl'>
@@ -147,7 +147,7 @@ const Article = () => {
                                                 <span>Vote: {itemMovies.vote_average}</span>
                                                 <span>{itemMovies.release_date}</span>
                                             </div>
-                                            <div className='w-full p-4'>
+                                            <div className='w-full p-4 '>
                                                 <ButtonStyle to={`/Reviewmovies/${itemMovies.id}`} buttonContent={'Xem Phim'} />
                                             </div>
                                         </>
@@ -158,7 +158,7 @@ const Article = () => {
 
 
 
-                    <div className='flex justify-center '>
+                    <div className='flex justify-center max-md:text-center'>
                         <Pagination
                             totalPages={Math.ceil(data.length / numberProduct)}
                             currentPage={currentPage}

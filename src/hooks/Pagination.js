@@ -9,7 +9,7 @@ const pageButtons = [...Array(totalPages)].map((_,index) => index + 1);
         <button
           key={pageNumber}
           onClick={() => onPageChange(pageNumber)}
-          className={`hover:bg-slate-900 p-2 m-2 rounded-md ${pageNumber === currentPage ? 'bg-blue-500 text-white' : ''}`}
+          className={`hover:bg-slate-900 p-2 m-2 rounded-md ${pageNumber === currentPage ? 'bg-blue-500' : ''}`}
         
         >
           {`Trang ${pageNumber}`}

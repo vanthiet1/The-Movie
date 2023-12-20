@@ -22,8 +22,8 @@ const Article = () => {
   }
   return (
     <>
-      <div className="w-full h-auto mt-40 p-5">
-        <div className='w-full h-auto flex gap-4 text-x p-8'>
+      <div className="w-full h-auto mt-40 p-5 max-md:p-0">
+        <div className='w-full h-auto flex gap-4 text-x p-8 max-md:grid max-md:grid-cols-2 max-md:p-5'>
           {buttonList.map((item, index) => (
             <button
               className='p-5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 opacity-90'

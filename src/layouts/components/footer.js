@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <>
             <div className="w-full h-auto">
-                <div className=' w-full h-auto grid grid-cols-4 p-10 gap-10'>
+                <div className=' w-full h-auto grid grid-cols-4 p-10 gap-10 max-md:grid max-md:grid-cols-2'>
                     <div className='w-full h-auto'>
                         <span className='block'>Giới thiệu về chúng tôi</span>
                         {Data1.map((infor1, index) => (
@@ -34,9 +34,8 @@ const Footer = () => {
                         ))}
                     </div>
                 </div>
-                <div className="w-full text-center text-2xl">
+                <div className="w-full text-center text-2xl max-md:p-[10px] max-md:mb-[100px]">
                     <span className='text-center w-full  text-stone-400'>Copyright © 2023 The Movie VanThiet</span>
-                  
                 </div>
             </div>
         </>
