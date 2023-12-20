@@ -62,7 +62,7 @@ const Header = () => {
                     </div>
 
                     {showResults && (
-                        <div className="absolute bg-slate-900 w-[475px] h-[400px] z-10 rounded-lg overflow-auto max-xl:left-[-0px] max-xl:w-[370px]">
+                        <div className="absolute bg-slate-900 w-[475px] h-[400px] z-10 rounded-lg overflow-auto max-xl:left-[-0px] max-xl:w-[370px] max-md:w-[300px] max-md:left-[-50px]">
                             <div className='h-max'>
                                 {searchResults.map((result) => (
                                     <Link to={`/Reviewmovies/${result.id}`} key={result.id}>
