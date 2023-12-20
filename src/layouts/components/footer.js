@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <>
             <div className="w-full h-auto">
-                <div className=' w-full h-auto grid grid-cols-4 p-10'>
+                <div className=' w-full h-auto grid grid-cols-4 p-10 gap-10'>
                     <div className='w-full h-auto'>
                         <span className='block'>Giới thiệu về chúng tôi</span>
                         {Data1.map((infor1, index) => (
@@ -36,7 +36,7 @@ const Footer = () => {
                 </div>
                 <div className="w-full text-center text-2xl">
                     <span className='text-center w-full  text-stone-400'>Copyright © 2023 The Movie VanThiet</span>
-                    <p className='text-center w-full  text-stone-400 text-lg'>Chúng tôi sử dụng Cookies để cải thiện trải nghiệm sử dụng của bạn. Nếu bạn tiếp tục sử dụng trang web của chúng tôi, có nghĩa là bạn đồng ý chúng tôi sử dụng Cookies</p>
+                  
                 </div>
             </div>
         </>

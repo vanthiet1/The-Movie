@@ -21,7 +21,7 @@ const Article = () => {
             try {
                 const response = await fetchMovieDetails(id);
                 setMovieDetails(response);
-                document.title = `Movie - ${response.title}`
+                document.title = `Movie - ${response.title}`;
             } catch (error) {
                 console.log(error);
             }

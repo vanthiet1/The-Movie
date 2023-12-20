@@ -1,35 +1,39 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Language from '../../components/OptionLanguage/language';
-import { useTranslation } from 'react-i18next'; 
-import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+// import { useLocation } from 'react-router-dom';
 import { searchMovies } from '../../services/searchService';
+
 const Header = () => {
     const { t } = useTranslation();
-    const location = useLocation();
-    const query = new URLSearchParams(location.search).get('query');
+    // const location = useLocation();
     const [searchResults, setSearchResults] = useState([]);
-    const [searchQuery,setSearchQuery] = useState('');
-    const handleSearchChange = (e)=>{
-         setSearchQuery(e.target.value);
-    }
-    useEffect(()=>{
-if(query){
-    const fetchSearchResults = async ()=>{
-        try {
-            const results = await searchMovies(query);
-            setSearchResults(results);
-          
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    fetchSearchResults();
-}
-
-    },[query])
+    const [searchQuery, setSearchQuery] = useState('');
+    const [showResults, setShowResults] = useState(false);
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
+        setShowResults(e.target.value.trim() !== '');
+    };
     console.log(searchResults);
+
+    useEffect(() => {
+        const fetchSearchResults = async () => {
+            try {
+                if (searchQuery.trim() !== '') { 
+                    const response = await searchMovies(searchQuery);
+                    setSearchResults(response.results);
+                } else {
+                    setSearchResults([]);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchSearchResults();
+    }, [ searchQuery]);
+
     return (
         <>
             <div className='w-full bg-black p-10 flex items-center justify-between fixed top-0 left-0 z-10 opacity-90'>
@@ -45,24 +49,43 @@ if(query){
                 </ul>
                 <div className='w-2/6 relative'>
                     <div className='relative'>
-                        <input className='w-full p-3 rounded-2xl bg-slate-800' 
-                        type="text" 
-                        placeholder={t('Tìm Phim')} 
-                        value={searchQuery}
-                        onChange={handleSearchChange}
+                        <input
+                            className='w-full p-3 rounded-2xl bg-slate-800'
+                            type="text"
+                            placeholder={t('Tìm Phim')}
+                            value={searchQuery}
+                            onChange={handleSearchChange}
                         />
                         <div className='absolute top-4 right-10 hover:text-2xl ease-in duration-300 '>
-                            <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="search" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="search" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </div>
                     </div>
-                     {/* <div className="absolute bg-slate-900 w-[475px] h-[400px] z-10 rounded-lg overflow-auto">
-                        <div className='h-max'>
-                          <div className='w-full p-5 flex items-center gap-4'>     
-                            <img className='w-[200px]' src="https://image.tmdb.org/t/p/w500/ixhr0YVs0Du0fPIYQSYYOIf3j0R.jpg" alt="" />
-                            <span>Robot</span>
-                          </div>
+
+                    {showResults && (
+                        <div className="absolute bg-slate-900 w-[475px] h-[400px] z-10 rounded-lg overflow-auto">
+                            <div className='h-max'>
+                                {searchResults.map((result) => (
+                                    <Link to={`/Reviewmovies/${result.id}`} key={result.id}>
+                                        <div className='w-full p-5 flex gap-4 cursor-pointer hover:brightness-125 hover:bg-slate-800'>
+                                            {result.poster_path && result.title && result.overview ? (
+                                                <>
+                                                    <div className='w-[30%]'>
+                                                        <img className='w-[100%] h-[100%] object-cover' src={`https://image.tmdb.org/t/p/w500/${result.poster_path}`} alt="" />
+                                                    </div>
+                                                    <div className='w-[70%]'>
+                                                        <span className='inline-block'>{result.title}</span>
+                                                        <p className='text-[13px]'>{result.overview}</p>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <span>Sớm cập nhật</span>
+                                            )}
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
-                     </div> */}
+                    )}
                 </div>
                 <div className="">
                     <Language></Language>
