@@ -35,7 +35,7 @@ const Article = () => {
           ))}
         </div>
 
-        <div className='flex justify-between mt-10'>
+        <div className='grid grid-cols-4 gap-10 mt-10 max-md:grid max-md:grid-cols-1'>
   {loading ? (
     Array.from({ length: 4 }).map((_, index) => (
       <Skeleton key={index} />
