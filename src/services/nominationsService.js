@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_KEY = 'b9213c2cb1c7e5cd36af34a45ccc92fe';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const pages = [7];
+const pages = [2];
 
 const nominationsMovies = async () => {
     try {

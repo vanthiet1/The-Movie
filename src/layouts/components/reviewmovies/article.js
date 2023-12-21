@@ -2,17 +2,21 @@ import { Link } from 'react-router-dom';
 import { ButtonStyle } from '../../../components/button/buttonStyle';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 import { fetchMovieDetails } from '../../../services/reviewMovies';
 import { fetchCast } from '../../../services/castsService';
 import { fetchSimilarMovies } from '../../../services/similarService';
+import { fetchVideoTrailer } from '../../../services/trailervideoService';
 import Footer from '../footer';
 import Logo from '../../../assets/logo-reactJS.png';
 const Article = () => {
-    
+
     const { id } = useParams();
     const [movieDetails, setMovieDetails] = useState(null);
     const [relatedMovies, SetRelatedMovies] = useState([]);
     const [castsMovies, SetCastsMovies] = useState([]);//diễn viên
+    const [trailerKey, setTrailerKey] = useState(null);
+    const [showTrailer, setShowTrailer] = useState(false)
     const handleScroll = () => {
         const view = document.getElementById('content-top');
         view.scrollIntoView({ behavior: "smooth", block: "start" })
@@ -47,8 +51,6 @@ const Article = () => {
             try {
                 const response = await fetchCast(id);
                 SetCastsMovies(response.cast);
-               console.log(response);
-
             } catch (error) {
                 console.log(error);
             }
@@ -56,13 +58,50 @@ const Article = () => {
         castsMovies();
     }, [id])
 
+    const handleShowTrailer = () => {
+        setShowTrailer(true);
+    }
+
+
+    useEffect(() => {
+        const getTrailerKey = async () => {
+            try {
+                const videoData = await fetchVideoTrailer(id);
+                if (videoData && videoData.results.length > 0) {
+                    setTrailerKey(videoData.results[0].key);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        getTrailerKey();
+    }, [id]);
     return (
         <>
             <div id='content-top' className='w-full h-auto mt-[100px]'>
                 {movieDetails ? (
                     <>
                         {movieDetails && (
-                            <div className='flex justify-between max-md:grid max-md:grid-cols-1 max-md:gap-[10px]'>
+                            <div className='flex justify-between max-md:grid max-md:grid-cols-1 max-md:gap-[10px] relative'>
+                                <div className="absolute top-[-3px] left-[0] z-[5] w-[100%] max-md:top-[-25px] ">
+                                    {trailerKey ? (
+                                        <>
+                                            {showTrailer && (
+                                                <ReactPlayer
+                                                    url={`https://www.youtube.com/watch?v=${trailerKey}`}
+                                                    width="100%"
+                                                    height="400px"
+                                                    controls
+                                                    playing={true}
+                                                 
+                                                />
+                                            )}
+                                        </>
+                                    ) : (
+                                        <h1 className='text-center'>Trailer sắp có trong tương lai</h1>
+                                    )}
+                                </div>
                                 <div className='flex gap-5'>
                                     {movieDetails.poster_path ? (
                                         <>
@@ -83,7 +122,7 @@ const Article = () => {
                                             <span className='block max-md:text-[14px] '>Lượt xem: {movieDetails.popularity}</span>
                                         </div>
                                         <div className='pt-2 w-full'>
-                                            <ButtonStyle to={`https://www.youtube.com/embed/${movieDetails.trailerURL}`} buttonContent={'Xem Trailer'} />
+                                            <button onClick={handleShowTrailer} className='p-5 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 opacity-90'>Xem Trailer</button>
                                         </div>
                                     </div>
                                 </div>
@@ -104,26 +143,26 @@ const Article = () => {
                     <h1>Sớm cập nhật</h1>
                 )
                 }
-                <div className="w-full h-auto pl-5">
+                <div className="w-full h-auto pl-5 mt-[35px]">
                     <div className='w-full h-auto'>
                         <h1 className='text-[30px] max-md:text-3xl max-md:py-5'>Dàn diễn viên</h1>
                     </div>
                     <div className='w-full h-auto flex justify-between gap-10 overflow-auto'>
-                        {castsMovies.map((cast)=>(
+                        {castsMovies.map((cast) => (
                             <div key={cast.id}>
                                 <div className='w-max h-full text-center'>
-                                  {cast.profile_path ? (
-                                    <>
-                                    <img
-                                        className='object-cover w-[150px] rounded-xl'
-                                        src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
-                                        alt={cast.name}
-                                    />
-                                  </>
-                                  ):(
-                                     <img className='object-cover w-[150px] h-[225px]' src={Logo} alt="" />
-                                  )}
-                                        <span className='text-center'>{cast.name}</span>
+                                    {cast.profile_path ? (
+                                        <>
+                                            <img
+                                                className='object-cover w-[150px] rounded-xl'
+                                                src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
+                                                alt={cast.name}
+                                            />
+                                        </>
+                                    ) : (
+                                        <img className='object-cover w-[150px] h-[225px]' src={Logo} alt="" />
+                                    )}
+                                    <span className='text-center'>{cast.name}</span>
                                 </div>
                             </div>
                         ))}
@@ -176,7 +215,7 @@ const Article = () => {
                     </div>
                 </div>
                 <Footer></Footer>
-            </div>
+            </div >
         </>
     );
 };

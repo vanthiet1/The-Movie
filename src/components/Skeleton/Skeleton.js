@@ -2,7 +2,7 @@ import React from 'react';
 
 const Skeleton = () => {
   return (
-    <div class="w-full mx-0 max-md:p-[5px] max-md:m-0">
+    <div class="w-full mx-0 max-md:p-[5px] max-md:m-0 max-lg:grid">
       <div class="h-max shadow-md rounded-md items-center w-full max-md:mr-0 ">
         <div class="p-1 " style={{height:'400px'}}>
             <div data-placeholder class="max-md:w-[100%]  mb-2 w-[335px] h-[100%] overflow-hidden relative bg-gray-400 rounded-xl">
