@@ -15,6 +15,9 @@ const Header = () => {
         setSearchQuery(e.target.value);
         setShowResults(e.target.value.trim() !== '');
     };
+    document.addEventListener('click',()=>{
+        setShowResults(false);
+    })
     console.log(searchResults);
 
     useEffect(() => {
