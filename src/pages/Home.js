@@ -3,18 +3,16 @@ import HeaderPage from '../layouts/components/header';
 import Section from '../layouts/components/home/section';
 import Article from '../layouts/components/home/article'
 import Footer from '../layouts/components/footer';
-import { useLanguage } from '../hooks/languageContext';
-import { useTranslation } from 'react-i18next';
+
 
 const Home = () => {
-  const { language } = useLanguage();
-  const { t } = useTranslation();
+
   return (
     <div>
-      <HeaderPage t={t} language={language} />
-      <Section t={t} language={language} />
-     <Article  t={t} language={language} />
-     <Footer  t={t} language={language} />
+      <HeaderPage />
+      <Section />
+     <Article />
+     <Footer />
     </div>
   );
 };

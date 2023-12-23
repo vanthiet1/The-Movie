@@ -167,10 +167,6 @@ const Article = () => {
                             </div>
                         ))}
                     </div>
-
-
-
-
                 </div>
                 <div className='w-full pl-5 mt-[50px] max-md:p-5'>
                     <h1 className='text-5xl max-md:text-3xl'>Phim tương tự</h1>

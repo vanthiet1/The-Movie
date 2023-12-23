@@ -18,7 +18,6 @@ const Header = () => {
     document.addEventListener('click',()=>{
         setShowResults(false);
     })
-    console.log(searchResults);
 
     useEffect(() => {
         const fetchSearchResults = async () => {
@@ -90,9 +89,6 @@ const Header = () => {
                         </div>
                     )}
                 </div>
-                {/* <div className="max-md:w-[20%]">
-                    <Language></Language>
-                </div> */}
             </div>
         </>
     );
