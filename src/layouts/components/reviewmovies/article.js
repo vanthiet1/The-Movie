@@ -94,7 +94,6 @@ const Article = () => {
                                                     height="400px"
                                                     controls
                                                     playing={true}
-                                                 
                                                 />
                                             )}
                                         </>
@@ -147,7 +146,7 @@ const Article = () => {
                     <div className='w-full h-auto'>
                         <h1 className='text-[30px] max-md:text-3xl max-md:py-5'>Dàn diễn viên</h1>
                     </div>
-                    <div className='w-full h-auto flex justify-between gap-10 overflow-auto'>
+                    <div className='w-full h-auto flex justify-between gap-10 overflow-auto cast'>
                         {castsMovies.map((cast) => (
                             <div key={cast.id}>
                                 <div className='w-max h-full text-center'>
