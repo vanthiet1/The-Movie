@@ -91,7 +91,7 @@ const Article = () => {
                                                 <ReactPlayer
                                                     url={`https://www.youtube.com/watch?v=${trailerKey}`}
                                                     width="100%"
-                                                    height="400px"
+                                                    height="450px"
                                                     controls
                                                     playing={true}
                                                 />
@@ -142,7 +142,7 @@ const Article = () => {
                     <h1>Sớm cập nhật</h1>
                 )
                 }
-                <div className="w-full h-auto pl-5 mt-[35px]">
+                <div className="w-full h-auto pl-5 mt-[50px]">
                     <div className='w-full h-auto'>
                         <h1 className='text-[30px] max-md:text-3xl max-md:py-5'>Dàn diễn viên</h1>
                     </div>
