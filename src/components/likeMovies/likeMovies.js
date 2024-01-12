@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-
 const LikeMovies = ({ itemMovies }) => {
     const navigate = useNavigate();
     const [favoriteMovies, setFavoriteMovies] = useState([]);
