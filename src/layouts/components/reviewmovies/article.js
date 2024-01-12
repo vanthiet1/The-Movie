@@ -91,7 +91,7 @@ const Article = () => {
                                                 <ReactPlayer
                                                     url={`https://www.youtube.com/watch?v=${trailerKey}`}
                                                     width="100%"
-                                                    height="450px"
+                                                    height="400px"
                                                     controls
                                                     playing={true}
                                                 />
@@ -105,7 +105,7 @@ const Article = () => {
                                     {movieDetails.poster_path ? (
                                         <>
                                             <div className='p-2 max-xl:w-[330px] max-md:w-[350px]'>
-                                                <img className='w-full h-[350px] rounded-xl max-md:object-cover' src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt="" />
+                                                <img className='w-full h-[350px] rounded-xl max-md:object-cover max-md:mt-1' src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt="" />
                                             </div>
                                         </>
                                     ) : (
