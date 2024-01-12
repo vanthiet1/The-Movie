@@ -35,9 +35,9 @@ const FavoriteMovie = () => {
     <div>
       <div className=' p-5 text-center h-auto'>
         {storedFavoriteMovies.length > 0 ? (
-          <div className='grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1'>
+          <div className='grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1 '>
             {storedFavoriteMovies.map((favoriteMovie, index) => (
-              <div key={index} className='w-[100%] p-5 '>
+              <div key={index} className='w-[100%] p-5 border-2 border-gray-800 rounded-2xl'>
                 <img
                   className='w-[100%] rounded-lg'
                   src={`https://image.tmdb.org/t/p/w500${favoriteMovie.poster_path}`}
