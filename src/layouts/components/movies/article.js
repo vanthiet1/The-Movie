@@ -34,7 +34,6 @@ const Article = () => {
             </button>
           ))}
         </div>
-
         <div className='flex mt-10 max-md:grid max-md:grid-cols-1'>
   {loading ? (
     Array.from({ length: 4 }).map((_, index) => (
