@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ButtonStyle } from '../../../../components/button/buttonStyle';
 import {fetchTopRateMovies} from '../../../../services/topRateService';
+import LikeMovies from '../../../../components/likeMovies/likeMovies';
 const TopRatedMovies = () => {
  const [allDataTopratedMovies, setAllDataTopratedMovies] = useState([]);
  useEffect(() => {
@@ -40,7 +41,7 @@ const TopRatedMovies = () => {
                                         </div>
                                         <div className='w-full p-4'>
                                             <ButtonStyle to={`/Reviewmovies/${itemAllMovies.id}`} buttonContent={'Xem Phim'} />
-
+                                            <LikeMovies itemMovies={itemAllMovies}></LikeMovies>
                                         </div>
                                     </div>
                                 ))}

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import LikeMovies from '../../../components/likeMovies/likeMovies';
 import { fetchPopularMovie } from '../../../services/popularServices';
 import IconleftArow from '../../icon/IconleftArow';
 import IconrightArow from '../../icon/IconrightArow';
@@ -6,7 +8,6 @@ import { ButtonStyle } from '../../../components/button/buttonStyle';
 import Pagination from '../../../hooks/Pagination';
 import Skeleton from '../../../components/Skeleton/Skeleton';
 import {nominationsMovies} from '../../../services/nominationsService';
-import { Link } from 'react-router-dom';
 
 const Article = () => {
 
@@ -75,6 +76,7 @@ const Article = () => {
     };
 
     const numberProduct = 4;
+// 
 
 
     return (
@@ -149,14 +151,14 @@ const Article = () => {
                                             </div>
                                             <div className='w-full p-4 '>
                                                 <ButtonStyle to={`/Reviewmovies/${itemMovies.id}`} buttonContent={'Xem Phim'} />
+                                                <LikeMovies itemMovies={itemMovies}></LikeMovies>
+                                      
                                             </div>
                                         </>
                                     )}
                                 </div>
                             ))}
                     </div>
-
-
 
                     <div className='flex justify-center max-md:text-center'>
                         <Pagination
@@ -165,9 +167,6 @@ const Article = () => {
                             onPageChange={handlePageChange}
                         />
                     </div>
-
-
-
                 </div>
             </div>
         </>

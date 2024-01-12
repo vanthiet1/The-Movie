@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ButtonStyle } from '../../../../components/button/buttonStyle';
 import {fetchTrandingMovies} from '../../../../services/trendingService';
+import LikeMovies from '../../../../components/likeMovies/likeMovies';
+
 const TrendingMovie = () => {
  const [allDataTrendingMovies, setAllDataTrendingMovies] = useState([]);
  useEffect(() => {
@@ -40,7 +42,7 @@ const TrendingMovie = () => {
                                         </div>
                                         <div className='w-full p-4'>
                                             <ButtonStyle to={`/Reviewmovies/${itemAllMovies.id}`} buttonContent={'Xem Phim'} />
-
+                                            <LikeMovies itemMovies={itemAllMovies}></LikeMovies>
                                         </div>
                                     </div>
                                 ))}

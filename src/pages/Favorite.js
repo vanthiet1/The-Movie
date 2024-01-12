@@ -1,15 +1,19 @@
-import React from 'react';
+import FavoriteMovie from '../layouts/components/Favorite/favoriteMovies';
+
 import HeaderPage from '../layouts/components/header';
 import FooterPage from '../layouts/components/footer';
+
 const Favorite = () => {
-    document.title="Favorite";
+    document.title = "Favorite";
+   
     return (
         <div>
-        <HeaderPage></HeaderPage>
-         <div className="mt-[100px] p-5 text-center h-[250px]">
-         <h1 className='updating'>Tính năng đang phát triển bởi Văn thiết Frontend developer</h1>
-         </div>
-        <FooterPage></FooterPage>
+            <HeaderPage />
+            <div className="mt-[100px] p-5 text-center h-auto">
+            <h1 className='text-center pb-5'>Thông tin các bộ phim yêu thích</h1>
+            <FavoriteMovie></FavoriteMovie>
+            </div>
+            <FooterPage />
         </div>
     );
 };

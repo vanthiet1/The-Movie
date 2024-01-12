@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ButtonStyle } from '../../../../components/button/buttonStyle';
 import { fetchAllmovies } from '../../../../services/allService';
+import LikeMovies from '../../../../components/likeMovies/likeMovies';
 const AllMovies = () => {
  const [allData, setAllData] = useState([]);
  useEffect(() => {
@@ -40,7 +41,7 @@ const AllMovies = () => {
                                         </div>
                                         <div className='w-full p-4'>
                                             <ButtonStyle to={`/Reviewmovies/${itemAllMovies.id}`} buttonContent={'Xem Phim'} />
-
+                                            <LikeMovies itemMovies={itemAllMovies}></LikeMovies>
                                         </div>
                                     </div>
                                 ))}
